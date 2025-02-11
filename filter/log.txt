@@ -1,5 +1,0 @@
-DEBUG: System initialization complete. 
-INFO: This is an information message. 
-WARNING: Resource usage approaching limits. 
-ERROR: Connection to database failed. 
-CRITICAL: Failed to find user with ID "42".
