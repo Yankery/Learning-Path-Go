@@ -1,0 +1,11 @@
+*~
+.#*
+._*
+.env
+.git
+.idea
+.project
+.DS_Store
+__*
+
+coverage.*

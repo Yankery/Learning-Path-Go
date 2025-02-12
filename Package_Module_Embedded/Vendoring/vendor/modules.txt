@@ -1,0 +1,3 @@
+# github.com/pioz/faker v1.7.3
+## explicit; go 1.14
+github.com/pioz/faker

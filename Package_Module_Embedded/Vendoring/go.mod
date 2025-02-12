@@ -1,4 +1,4 @@
-module mod
+module vendor
 
 go 1.23.6
 
