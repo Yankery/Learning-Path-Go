@@ -36,7 +36,7 @@ func main() {
 	fmt.Println("Connected!")
 
 	//body
-	rowsDeleted, err := deleteActor(201)
+	rowsDeleted, err := deleteActor(205)
 	if err != nil {
 		log.Fatal(err)
 	}

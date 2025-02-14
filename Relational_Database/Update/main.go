@@ -36,7 +36,7 @@ func main() {
 	fmt.Println("Connected!")
 
 	//body
-	rowsUpdated, err := updateActor("James", 201)
+	rowsUpdated, err := updateActor("James", 200)
 	if err != nil {
 		log.Fatal(err)
 	}
