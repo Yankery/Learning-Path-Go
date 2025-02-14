@@ -1,4 +1,4 @@
-module noncre
+module nondel
 
 go 1.23.6
 
