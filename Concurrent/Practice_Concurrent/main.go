@@ -35,7 +35,7 @@ func fetchWeather(city string, ch chan<- string, wg *sync.WaitGroup) interface{}
 		return data
 	}
 	//pass info into channel
-	ch <- fmt.Sprintf("This is %s", city)
+	ch <- fmt.Sprintf("%s Temp: %v", city, data)
 
 	return data
 }

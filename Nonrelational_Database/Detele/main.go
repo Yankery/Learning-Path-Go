@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 
+	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -34,23 +35,16 @@ func main() {
 	fmt.Println(">> Connected to MongoDB!")
 
 	collection := client.Database("dvdstore").Collection("actordetails")
-	james := Actor{"James", "Roger", 9}
-	mark := Actor{"Mark", "Brown", 0}
-	mili := Actor{"Mili", "Ford", 11}
 
-	actors := []interface{}{mark, mili}
+	//setting up filter
+	filter := bson.D{{"firstname", "Mili"}}
 
-	insertResult, err := collection.InsertOne(context.TODO(), james)
+	deleteResult, err := collection.DeleteOne(context.TODO(), filter)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("Inserted a new actor: ", insertResult)
 
-	insertManyResult, err := collection.InsertMany(context.TODO(), actors)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println("Inserted new actors: ", insertManyResult.InsertedIDs)
+	fmt.Printf("Deleted %v actors.\n", deleteResult.DeletedCount)
 
 	err = client.Disconnect(context.TODO())
 	if err != nil {
