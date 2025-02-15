@@ -1,6 +1,8 @@
 package user
 
 import (
+	"fmt"
+	"log"
 	"testing"
 	"time"
 )
@@ -23,6 +25,28 @@ func TestGetOne(t *testing.T) {
 	if got != expect {
 		t.Errorf("Did not get the expected user. Got %+v, expected %+v", got, expect)
 	}
+}
+
+// example test
+func ExampleGetOne() {
+	//arrange
+	expect := User{
+		ID:       42,
+		Username: "mrobot",
+	}
+	users = []User{expect}
+
+	//act
+	got, err := getOne(expect.ID)
+
+	if err != nil {
+		log.Println(err)
+	}
+
+	fmt.Println(got.ID, got.Username)
+
+	// Output:
+	// 42 mrobot
 }
 
 func TestSlowOne(t *testing.T) {
