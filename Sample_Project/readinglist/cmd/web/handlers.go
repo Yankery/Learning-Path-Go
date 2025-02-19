@@ -81,7 +81,7 @@ func (app *application) bookView(w http.ResponseWriter, r *http.Request) {
 func (app *application) bookCreate(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case http.MethodGet:
-		app.bookCreateForm(w, r)
+		app.bookCreateForm(w)
 	case http.MethodPost:
 		app.bookCreateProcess(w, r)
 	default:
@@ -90,7 +90,7 @@ func (app *application) bookCreate(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func (app *application) bookCreateForm(w http.ResponseWriter, r *http.Request) {
+func (app *application) bookCreateForm(w http.ResponseWriter) {
 	files := []string{
 		"D:/Coding/Learn_Go/Sample_Project/readinglist/ui/html/base.html",
 		"D:/Coding/Learn_Go/Sample_Project/readinglist/ui/html/partials/nav.html",
